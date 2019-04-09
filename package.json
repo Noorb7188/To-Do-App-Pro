@@ -1,0 +1,23 @@
+{
+  "name": "to-do-app-pro",
+  "version": "1.0.0",
+  "description": "to-do list app",
+  "main": "dom.js",
+  "scripts": {
+    "test": "tape test.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lotus-1/To-Do-App-Pro.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lotus-1/To-Do-App-Pro/issues"
+  },
+  "homepage": "https://github.com/lotus-1/To-Do-App-Pro#readme",
+  "devDependencies": {
+    "tap-spec": "^5.0.0",
+    "tape": "^4.10.1"
+  }
+}
