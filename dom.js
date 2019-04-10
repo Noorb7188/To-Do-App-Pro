@@ -5,7 +5,6 @@
   // This is the dom node where we will keep our todo
   var container = document.getElementById('todo-container');
   var addTodoForm = document.getElementById('add-todo');
-
   var state = [
     { id: -3, description: 'first todo' },
     { id: -2, description: 'second todo' },
@@ -17,10 +16,23 @@
     var todoNode = document.createElement('li');
     // you will need to use addEventListener
 
+   addTodoForm.addEventListener('submit', function(event) {
+     console.log("is it working");
+    addTodo(state, newstate);
+    console.log(container.lastChild);
+   var input = document.getElementById("add-todo").firstChild;
+   var descriptionSpan = document.createElement("span");
+   descriptionSpan.textContent = input.value;
+   console.log(input.value);
+   addTodo(state, newstate);
+   todoNode.appendChild(descriptionSpan);
+   container.lastChild.appendChild(todoNode);
+  })
     // add span holding description
 
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
+    // deleteButtonNode.value = "delete";
     deleteButtonNode.addEventListener('click', function(event) {
       var newState = todoFunctions.deleteTodo(state, todo.id);
       update(newState);
