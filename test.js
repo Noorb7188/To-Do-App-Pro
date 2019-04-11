@@ -28,7 +28,6 @@ test('Testing tape', function(t) {
 test('leaves the original array unchanged', function(t){
   var actual = testTodos === logic.addTodo(testTodos, newTodoTest);
   var expected = false;
-
   t.equal(actual, expected, 'Return array is a copy of original array');
   t.end();
 });
