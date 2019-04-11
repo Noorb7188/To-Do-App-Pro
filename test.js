@@ -28,10 +28,9 @@ test('Testing tape', function(t) {
 test('leaves the original array unchanged', function(t){
   var actual = testTodos === logic.addTodo(testTodos, newTodoTest);
   var expected = false;
-  t.equal(actual, expected, 'Return array is a copy of original array');
+  t.deepEqual(actual, expected, 'returned array is a copy the original array');
   t.end();
-});
-
+})
 test('Testing addTodo', function(t){
 var actual = logic.addTodo(testTodos, newTodoTest);
 var expected = [
@@ -51,7 +50,6 @@ var expected = [
   done: false
 }
 ];
-
 t.deepEqual(actual, expected, 'New todo has been added to the todo array');
 t.end();
 });
