@@ -8,9 +8,9 @@
   // var list = document.getElementsByTagName("ul")[0];
   // list.setAttribute("id", "todoListId");
   var state = [
-    { id: -3, description: 'first todo' },
-    { id: -2, description: 'second todo' },
-    { id: -1, description: 'third todo' },
+    { id: -3, description: '' },
+    { id: -2, description: '' },
+    { id: -1, description: '' },
   ]; // this is our initial todoList
 
   // This function takes a todo, it returns the DOM node representing that todo
