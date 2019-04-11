@@ -20,4 +20,4 @@ We used addEventListener that allows us to run the delete and mark buttons.
 
 It was very fun,interesting and challenging :sparkles::sparkles::star2:
 
-We injoy working togather :sparkling_heart::heart_eyes:
+We enjoy working togather :sparkling_heart::heart_eyes:
