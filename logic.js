@@ -7,11 +7,9 @@ var todoFunctions = {
   // You do not need to understand the implementation of this function.
   generateId: (function() {
     var idCounter = 0;
-
     function incrementCounter() {
       return (idCounter += 1);
     }
-
     return incrementCounter;
   })(),
 
@@ -49,15 +47,13 @@ var todoFunctions = {
     var copyTodos = todoFunctions.cloneArrayOfObjects(todos);
     return copyTodos.map(function(val) {
       if( val.id === idToMark) {
-       val.done = true;  
+       val.done = true;
        return val;
      } else {
        val.done = false;
       return val;
     }
-
     });
-
   },
   sortTodos: function(todos, sortFunction) {
     // stretch goal! Do this last

@@ -5,6 +5,8 @@
   // This is the dom node where we will keep our todo
   var container = document.getElementById('todo-container');
   var addTodoForm = document.getElementById('add-todo');
+  // var list = document.getElementsByTagName("ul")[0];
+  // list.setAttribute("id", "todoListId");
   var state = [
     { id: -3, description: 'first todo' },
     { id: -2, description: 'second todo' },
@@ -12,27 +14,19 @@
   ]; // this is our initial todoList
 
   // This function takes a todo, it returns the DOM node representing that todo
-  var createTodoNode = function(todo) {
+var createTodoNode = function(todo) {
     var todoNode = document.createElement('li');
-    // you will need to use addEventListener
 
-   addTodoForm.addEventListener('submit', function(event) {
-     console.log("is it working");
-    addTodo(state, newstate);
-    console.log(container.lastChild);
-   var input = document.getElementById("add-todo").firstChild;
-   var descriptionSpan = document.createElement("span");
-   descriptionSpan.textContent = input.value;
-   console.log(input.value);
-   addTodo(state, newstate);
-   todoNode.appendChild(descriptionSpan);
-   container.lastChild.appendChild(todoNode);
-  })
-    // add span holding description
+  //  add span holding description
+ var spanHolder = document.createElement("span");
+ var spanText = document.createTextNode(todo.description);
+     spanHolder.appendChild(spanText);
+     todoNode.appendChild(spanHolder);
 
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
-    // deleteButtonNode.value = "delete";
+    var btnName = document.createTextNode("delete");
+    deleteButtonNode.appendChild(btnName);
     deleteButtonNode.addEventListener('click', function(event) {
       var newState = todoFunctions.deleteTodo(state, todo.id);
       update(newState);
@@ -40,7 +34,20 @@
     todoNode.appendChild(deleteButtonNode);
 
     // add markTodo button
+    var markButtonNode = document.createElement('button');
+     var btnName = document.createTextNode("mark");
+     markButtonNode.appendChild(btnName);
+     markButtonNode.addEventListener('click', function(event) {
 
+      var newState = todoFunctions.markTodo(state, todo.id);
+      update(newState);
+
+    });
+    if (todo.done) {
+   var result =  todo.description.strike();
+      spanHolder.innerHTML = result;
+    }
+    todoNode.appendChild(markButtonNode);
     // add classes for css
 
     return todoNode;
@@ -50,13 +57,10 @@
   if (addTodoForm) {
     addTodoForm.addEventListener('submit', function(event) {
       // https://developer.mozilla.org/en-US/docs/Web/Events/submit
-      // what does event.preventDefault do?
       // what is inside event.target?
-
-      var description = '?'; // event.target ....
-
-      // hint: todoFunctions.addTodo
-      var newState = []; // ?? change this!
+     event.preventDefault();
+     var description = event.target.firstElementChild.value;
+     var newState = todoFunctions.addTodo(state, {description : description});
       update(newState);
     });
   }
