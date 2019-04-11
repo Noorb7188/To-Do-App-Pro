@@ -50,7 +50,6 @@ var todoFunctions = {
        val.done = true;
        return val;
      } else {
-       val.done = false;
       return val;
     }
     });
