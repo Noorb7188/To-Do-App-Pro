@@ -5,12 +5,8 @@
   // This is the dom node where we will keep our todo
   var container = document.getElementById('todo-container');
   var addTodoForm = document.getElementById('add-todo');
-  // var list = document.getElementsByTagName("ul")[0];
-  // list.setAttribute("id", "todoListId");
   var state = [
-    { id: -3, description: 'first todo' },
-    { id: -2, description: 'second todo' },
-    { id: -1, description: 'third todo' },
+    { id: -3, description: 'example todo' },
   ]; // this is our initial todoList
 
   // This function takes a todo, it returns the DOM node representing that todo
@@ -38,18 +34,14 @@ var createTodoNode = function(todo) {
      var btnName = document.createTextNode("mark");
      markButtonNode.appendChild(btnName);
      markButtonNode.addEventListener('click', function(event) {
-
       var newState = todoFunctions.markTodo(state, todo.id);
       update(newState);
-
     });
     if (todo.done) {
-   var result =  todo.description.strike();
-      spanHolder.innerHTML = result;
+    spanHolder.innerHTML= todo.description.strike();
     }
     todoNode.appendChild(markButtonNode);
     // add classes for css
-
     return todoNode;
   };
 
