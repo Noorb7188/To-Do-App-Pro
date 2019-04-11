@@ -4,7 +4,7 @@ to see our page click [here](https://lotus-1.github.io/To-Do-App-Pro/)
 team members =   
 1- Maha @maha276
 2- Loreen @loreen17
-3- Hoda @ hodamansour
+3- Hoda @hodamansour
 4- Noor @Noorb7188
 
 ### login.js:
