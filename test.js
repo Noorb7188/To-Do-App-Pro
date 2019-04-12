@@ -22,7 +22,15 @@ test('Testing tape', function(t) {
 test('leaves the original array unchanged', function(t){
   var actual = testTodos === logic.addTodo(testTodos, newTodoTest);
   var expected = false;
-  t.deepEqual(actual, expected, 'returned array is a copy the original array');
+  t.equal(actual, expected, 'returned array is a copy the original array');
+
+  var actual = testTodos === logic.markTodo(testTodos, 1);
+  var expected = false;
+  t.equal(actual, expected, 'returned array is a copy the original array');
+
+  var actual = testTodos === logic.deleteTodo(testTodos, 1);
+  var expected = false;
+  t.equal(actual, expected, 'Return array is a copy of original array');
   t.end();
 })
 test('Testing addTodo', function(t){
@@ -43,35 +51,15 @@ t.deepEqual(actual, expected, 'New todo has been added to the todo array');
 t.end();
 });
 
-var testIdToDelete = 1;
-
-test('leaves the input argument unchanged', function(t){
-  var actual = testTodos === logic.deleteTodo(testTodos, testIdToDelete);
-  var expected = false;
-
-  t.equal(actual, expected, 'Return array is a copy of original array');
-  t.end();
-});
-
 test('Testing deleteTodo', function(t){
-  var actual = logic.deleteTodo(testTodos, testIdToDelete);
+  var actual = logic.deleteTodo(testTodos, 1);
   var expected = [];
-
   t.deepEqual(actual, expected, 'choosen todo with id has been deleted from the list');
   t.end();
 });
 
-var testIdToMark = 1;
-test('leaves the input argument unchanged', function(t){
-  var actual = testTodos === logic.markTodo(testTodos, testIdToMark);
-  var expected = false;
-
-  t.equal(actual, expected, 'choosen todo with id has been marked in the list');
-  t.end();
-});
-
 test('Testing markTodo', function(t) {
-  var actual = logic.markTodo(testTodos, testIdToMark);
+  var actual = logic.markTodo(testTodos, 1);
   var expected = [
     {
      id:1,
