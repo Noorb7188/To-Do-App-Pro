@@ -1,10 +1,12 @@
 body {
   background-image: url("https://thumbs.dreamstime.com/z/to-do-list-white-paper-pencils-background-template-56711188.jpg");
   background-repeat: no-repeat;
+
   background-size: cover;
   font-size: 30px;
   text-align: left;
   margin-top: 200px;
+
 }
 
 li {
@@ -13,4 +15,13 @@ li {
 
 form {
   margin-left: 250px;
+}
+
+@media screen and (max-width: 600px) {
+body {
+      background-attachment: fixed;
+      background-size: cover;
+      height:100%;
+      width:100%;
+}
 }

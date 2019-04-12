@@ -6,16 +6,10 @@ var testTodos = [
    id:1,
    description: "finish todo app",
    done: false
- },
- {
-  id: 2,
-  description: "Do my homework",
-  done: false
  }
 ]
 
 var newTodoTest = {
-  id: 3,
   description: "practice TDD",
   done: false
 }
@@ -39,13 +33,8 @@ var expected = [
    description: "finish todo app",
    done: false
  },
- {
-  id: 2,
-  description: "Do my homework",
-  done: false
-},
 {
-  id: 3,
+  id: 2,
   description: "practice TDD",
   done: false
 }
@@ -66,19 +55,13 @@ test('leaves the input argument unchanged', function(t){
 
 test('Testing deleteTodo', function(t){
   var actual = logic.deleteTodo(testTodos, testIdToDelete);
-  var expected = [
-    {
-     id: 2,
-     description: "Do my homework",
-     done: false
-    }
-  ];
+  var expected = [];
 
   t.deepEqual(actual, expected, 'choosen todo with id has been deleted from the list');
   t.end();
 });
 
-var testIdToMark = 2;
+var testIdToMark = 1;
 test('leaves the input argument unchanged', function(t){
   var actual = testTodos === logic.markTodo(testTodos, testIdToMark);
   var expected = false;
@@ -93,12 +76,7 @@ test('Testing markTodo', function(t) {
     {
      id:1,
      description: "finish todo app",
-     done: false
-   },
-   {
-    id: 2,
-    description: "Do my homework",
-    done: true
+     done: true
    }
  ];
  t.deepEqual(actual, expected, 'choosen todo with id has been marked in the list');
