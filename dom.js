@@ -5,12 +5,8 @@
   // This is the dom node where we will keep our todo
   var container = document.getElementById('todo-container');
   var addTodoForm = document.getElementById('add-todo');
-  var state = [
-    { id: -3, description: '' },
-    { id: -2, description: '' },
-    { id: -1, description: '' },
-  ]; // this is our initial todoList
-
+  var state = [];
+  // this is our initial todoList
   // This function takes a todo, it returns the DOM node representing that todo
 var createTodoNode = function(todo) {
     var todoNode = document.createElement('li');
