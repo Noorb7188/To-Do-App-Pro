@@ -27,8 +27,7 @@ var todoFunctions = {
     // add an id to the newTodo. You can use the generateId function to create an id.
     // hint: array.concat
     var copyTodos = todoFunctions.cloneArrayOfObjects(todos);
-    newTodo = Object.assign({id: todoFunctions.generateId()}, newTodo);
-    return copyTodos.concat(newTodo);
+    return copyTodos.concat(Object.assign({id: todoFunctions.generateId()}, newTodo));
   },
   deleteTodo: function(todos, idToDelete) {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
